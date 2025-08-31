@@ -8,10 +8,10 @@ export default {
     userInterfaceStyle: "light",
     newArchEnabled: true,
     extra: {
-      apiBaseUrl: process.env.EXPO_PUBLIC_API_BASE_URL,
-      eas: {
-        projectId: '8f1d97f2-50a0-49bb-82e0-0561986ae0c0'
-      }
+    "eas": {
+      "projectId": "653cc93b-e161-41a6-951a-2884ab7ef218"
+    },
+      "apiBaseUrl": process.env.EXPO_PUBLIC_API_BASE_URL
     },
     splash: {
       image: "./assets/splash-icon.png",
@@ -23,6 +23,7 @@ export default {
       bundleIdentifier: 'com.stepbycode.bridgeme'
     },
     android: {
+      package: "com.stepbycode.bridgeme",
       adaptiveIcon: {
         foregroundImage: "./assets/adaptive-icon.png",
         backgroundColor: "#ffffff"

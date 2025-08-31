@@ -8,7 +8,10 @@ export default {
     userInterfaceStyle: "light",
     newArchEnabled: true,
     extra: {
-      apiBaseUrl: process.env.EXPO_PUBLIC_API_BASE_URL
+      apiBaseUrl: process.env.EXPO_PUBLIC_API_BASE_URL,
+      eas: {
+        projectId: '8f1d97f2-50a0-49bb-82e0-0561986ae0c0'
+      }
     },
     splash: {
       image: "./assets/splash-icon.png",
@@ -16,7 +19,8 @@ export default {
       backgroundColor: "#ffffff"
     },
     ios: {
-      supportsTablet: true
+      supportsTablet: true,
+      bundleIdentifier: 'com.stepbycode.bridgeme'
     },
     android: {
       adaptiveIcon: {

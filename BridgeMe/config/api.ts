@@ -1,12 +1,11 @@
-import Constants from 'expo-constants';
-
 // 環境変数からAPIベースURLを取得
 const getApiBaseUrl = (): string => {
-  const apiBaseUrl = Constants.expoConfig?.extra?.apiBaseUrl || 
-                     process.env.EXPO_PUBLIC_API_BASE_URL || 
-                     'https://bridgeme-api.dokkiitech.dev';
+
   
-  console.log('API Base URL:', apiBaseUrl);
+  // Expoの場合はEXPO_PUBLIC_プレフィックスを使用
+  const apiBaseUrl = process.env.EXPO_PUBLIC_API_BASE_URL;
+  
+  console.log('Final API Base URL:', apiBaseUrl);
   return apiBaseUrl;
 };
 

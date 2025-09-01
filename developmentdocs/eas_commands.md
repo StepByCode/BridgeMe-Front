@@ -23,6 +23,11 @@ eas submit --platform ios
 ```
 初回は Apple API Key などの認証情報の入力が必要です。
 
+提出が完了すると、App Store Connect でビルドが処理されます。
+通常5〜10分ほどで反映され、TestFlightやAppのバージョン画面で確認できます。
+進捗やビルドの確認は以下のURLから可能です：
+https://appstoreconnect.apple.com/apps/6751770569/testflight/ios
+
 ## 5. Google Play への提出（Android）
 ```sh
 eas submit --platform android

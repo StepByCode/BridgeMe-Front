@@ -20,7 +20,10 @@ export default {
     },
     ios: {
       supportsTablet: true,
-      bundleIdentifier: 'com.stepbycode.bridgeme'
+      bundleIdentifier: 'com.stepbycode.bridgeme',
+      config: {
+        usesNonExemptEncryption: false
+      }
     },
     android: {
       package: "com.stepbycode.bridgeme",

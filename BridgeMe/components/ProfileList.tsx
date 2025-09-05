@@ -34,13 +34,12 @@ export default function ProfileList({ onProfileSelect }: ProfileListProps) {
     try {
       setLoading(true);
       const response = await fetch(API_ENDPOINTS.PROFILES);
-      
       if (!response.ok) {
         throw new Error('プロフィールの取得に失敗しました');
       }
-      
       const data = await response.json();
-      setProfiles(data);
+      console.log('profiles API response:', data);
+      setProfiles(Array.isArray(data) ? data : []);
     } catch (error) {
       Alert.alert(
         'エラー',

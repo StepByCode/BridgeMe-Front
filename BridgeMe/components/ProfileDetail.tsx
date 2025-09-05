@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { FontAwesome, FontAwesome6 } from '@expo/vector-icons';
 import {
   View,
   Text,
@@ -85,13 +86,13 @@ export default function ProfileDetail({ profile: profileProp, visible, onClose }
                 <Text style={styles.sectionTitle}>ソーシャルメディア</Text>
                 {profileProp.instagram_id && (
                   <View style={styles.socialItem}>
-                    <Text style={styles.socialIcon}>📷</Text>
+                    <View style={{ marginRight: 8 }}><FontAwesome name="instagram" size={20} color="#E4405F" /></View>
                     <Text style={styles.socialText}>@{profileProp.instagram_id}</Text>
                   </View>
                 )}
                 {profileProp.twitter_id && (
                   <View style={styles.socialItem}>
-                    <Text style={styles.socialIcon}>🐦</Text>
+                    <View style={{ marginRight: 8 }}><FontAwesome6 name="x-twitter" size={20} color="#000" /></View>
                     <Text style={styles.socialText}>@{profileProp.twitter_id}</Text>
                   </View>
                 )}

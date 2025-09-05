@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FontAwesome, FontAwesome6 } from '@expo/vector-icons';
 import {
   View,
   Text,
@@ -74,16 +75,20 @@ export default function ProfileList({ onProfileSelect }: ProfileListProps) {
       <Text style={styles.profileBio} numberOfLines={2}>
         {item.bio}
       </Text>
-      
       <View style={styles.socialContainer}>
         {item.instagram_id && (
-          <Text style={styles.socialText}>📷 @{item.instagram_id}</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 12 }}>
+            <FontAwesome name="instagram" size={16} color="#E4405F" style={{ marginRight: 4 }} />
+            <Text style={styles.socialText}>@{item.instagram_id}</Text>
+          </View>
         )}
         {item.twitter_id && (
-          <Text style={styles.socialText}>🐦 @{item.twitter_id}</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 12 }}>
+            <FontAwesome6 name="x-twitter" size={16} color="#000" style={{ marginRight: 4 }} />
+            <Text style={styles.socialText}>@{item.twitter_id}</Text>
+          </View>
         )}
       </View>
-      
       {item.created_at && (
         <Text style={styles.dateText}>
           {new Date(item.created_at).toLocaleDateString('ja-JP')}

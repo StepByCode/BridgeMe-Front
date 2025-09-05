@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Linking } from 'react-native';
 import { FontAwesome, FontAwesome6 } from '@expo/vector-icons';
 import {
   View,
@@ -87,13 +88,23 @@ export default function ProfileDetail({ profile: profileProp, visible, onClose }
                 {profileProp.instagram_id && (
                   <View style={styles.socialItem}>
                     <View style={{ marginRight: 8 }}><FontAwesome name="instagram" size={20} color="#E4405F" /></View>
-                    <Text style={styles.socialText}>@{profileProp.instagram_id}</Text>
+                    <TouchableOpacity
+                      onPress={() => Linking.openURL(`https://instagram.com/${profileProp.instagram_id}`)}
+                      activeOpacity={0.7}
+                    >
+                      <Text style={styles.socialText}>@{profileProp.instagram_id}</Text>
+                    </TouchableOpacity>
                   </View>
                 )}
                 {profileProp.twitter_id && (
                   <View style={styles.socialItem}>
                     <View style={{ marginRight: 8 }}><FontAwesome6 name="x-twitter" size={20} color="#000" /></View>
-                    <Text style={styles.socialText}>@{profileProp.twitter_id}</Text>
+                    <TouchableOpacity
+                      onPress={() => Linking.openURL(`https://x.com/${profileProp.twitter_id}`)}
+                      activeOpacity={0.7}
+                    >
+                      <Text style={styles.socialText}>@{profileProp.twitter_id}</Text>
+                    </TouchableOpacity>
                   </View>
                 )}
               </View>
